@@ -1,0 +1,36 @@
+global_frame: /map
+robot_base_frame: /base_footprint
+transform_tolerance: 0.2
+
+update_frequency: 5.0
+publish_frequency: 2.0
+rolling_window: false
+footprint: [[1.0, 2.0], [1.0, -2.0], [-1.0, -2.0], [-1.0, 2.0]]
+#robot_radius: 2.0
+
+width: 200
+height: 200
+resolution: 0.05
+origin_x: -100
+origin_y: -100
+
+plugins:
+  - {name: obstacles, type: "costmap_2d::ObstacleLayer"}
+  - {name: inflation, type: "costmap_2d::InflationLayer"}
+
+obstacles:
+  obstacle_range: 15.0
+  raytrace_range: 16.0
+
+  observation_sources: lidar_scan    
+  lidar_scan: 
+    topic: /lidar/scan
+    sensor_frame: /lidar
+    data_type: LaserScan
+    marking: true
+    clearing: true
+  
+inflation:
+  inflation_radius: 3.0
+  cost_scaling_factor: 1.0
+

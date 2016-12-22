@@ -1,0 +1,17 @@
+<class_libraries>
+  <library path="lib/libaudi_speed_controller">
+    <class name="audibot_control/AudiSpeedController" type="audibot_control::AudiSpeedController" base_class_type="controller_interface::ControllerBase" >
+      <description>
+        Low level control of wheel speeds.
+      </description>
+    </class>
+  </library>
+
+  <library path="lib/libaudi_steering_controller">
+    <class name="audibot_control/AudiSteeringController" type="audibot_control::AudiSteeringController" base_class_type="controller_interface::ControllerBase" >
+      <description>
+        Low level control of steering angles.
+      </description>
+    </class>
+  </library>
+</class_libraries>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <include file="$(find ugv_course_launch)/launch/spawn_gazebo_robot.launch" >
+    <arg name="robot" value="audibot" />
+    <arg name="description_pkg" value="$(find audibot_description)" />
+    <arg name="control_pkg" value="$(find audibot_control)" />
+    <arg name="twist_control" value="true" />
+    <arg name="start_x" value="0.0" />
+    <arg name="start_y" value="0.0" />
+    <arg name="gps" value="true" />
+    <arg name="gps_rate" value="50.0" />
+    <arg name="pub_tf" value="1" />
+    <arg name="pub_heading" value="1" />
+    <arg name="tf_freq" value="1000.0" />
+  </include>
+
+  <param name="/audibot/gps/ref_lat" value="42.853452" />
+  <param name="/audibot/gps/ref_lon" value="-83.069858" />
+
+  <include file="$(find ugv_course_gazebo)/launch/gazebo_world.launch" >
+    <arg name="world_name" value="$(find ugv_course_gazebo)/worlds/empty_world.world" />
+    <arg name="headless" value="true" />
+  </include>
+
+</launch>

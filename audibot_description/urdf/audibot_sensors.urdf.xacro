@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<robot name="audibot_sensors" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  
+  <xacro:include filename="$(find robot_sensors)/urdf/audibot_camera.urdf.xacro" />
+  <xacro:include filename="$(find robot_sensors)/urdf/hokuyo_utm_30.urdf.xacro" />
+<!--  
+  <xacro:audibot_camera name="front_camera" parent_link="base_footprint" x="2.4" y="0" z="1.3" roll="0" pitch="0.4" yaw="0" />
+-->
+
+  <xacro:audibot_camera name="front_camera" parent_link="base_footprint" x="2.3" y="-0.6" z="1.3" roll="0" pitch="0.4" yaw="-1.548" />
+  
+    <xacro:audibot_camera name="back_camera" parent_link="base_footprint" x="-0.7" y="0" z="0.9" roll="0" pitch="1.0" yaw="3.14" />
+
+    <xacro:hokuyo_utm_30 name="lidar" parent_frame="base_footprint" x="2" y="0" z="1.5" roll="0" pitch="0" yaw="0" />
+    
+</robot>  

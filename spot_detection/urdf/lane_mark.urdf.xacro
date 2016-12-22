@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+
+<robot name="lane_mark" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+
+
+  <link name="lane_left" >
+    <visual>
+      <geometry>
+        <box size="6 0.2 0.01" />
+      </geometry>
+      <material name="yellow" >
+        <color rgba="255 255 0 1" />
+      </material>
+    </visual>
+  </link>
+  
+  <link name="lane_right" >
+    <visual>
+      <geometry>
+        <box size="6 0.2 0.01" />
+      </geometry>
+      <material name="yellow" >
+        <color rgba="255 255 0 1" />
+      </material>
+    </visual>
+  </link>
+  
+  <link name="lane_middle" >
+    <visual>
+      <geometry>
+        <box size="3 0.2 0.01" />
+      </geometry>
+      <material name="yellow" >
+        <color rgba="255 255 0 1" />
+      </material>
+    </visual>
+  </link>
+  
+  <joint name="joint_left" type="fixed" >
+    <parent link="lane_middle" />
+    <child link="lane_left" />
+    <origin xyz="1.5 3 0" rpy="0 0 90" />
+  </joint>
+  
+  <joint name="joint_right" type="fixed" >
+    <parent link="lane_middle" />
+    <child link="lane_right" />
+    <origin xyz="-1.5 -3 0" rpy="0 0 90" />
+  </joint>
+  
+</robot>
+  
+  

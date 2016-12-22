@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+
+<robot name="audibot_friction">
+
+  <!--<xacro:property name="wheel_friction" value="2000.0" />-->
+
+  <gazebo reference="base_link" >
+    <mu1>5.0</mu1>
+    <mu2>5.0</mu2>
+  </gazebo>
+
+  <gazebo reference="wheel_fl" >
+    <mu1>10.0</mu1>
+    <mu2>1000.0</mu2>
+  </gazebo>
+
+  <gazebo reference="wheel_fr" >
+    <mu1>10.0</mu1>
+    <mu2>1000.0</mu2>
+  </gazebo>
+
+  <gazebo reference="wheel_rl" >
+    <mu1>10.0</mu1>
+    <mu2>1000.0</mu2>
+  </gazebo>
+
+  <gazebo reference="wheel_rr" >
+    <mu1>10.0</mu1>
+    <mu2>1000.0</mu2>
+  </gazebo>
+
+</robot>

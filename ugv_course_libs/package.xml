@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package>
+  <name>ugv_course_libs</name>
+  <version>0.0.0</version>
+  <description>The ugv_course_libs package</description>
+  <maintainer email="micho@todo.todo">micho</maintainer>
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>tf</build_depend>
+  <run_depend>sensor_msgs</run_depend>
+  <run_depend>tf</run_depend>
+
+  <export>
+  </export>
+</package>

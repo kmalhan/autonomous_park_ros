@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <include file="$(find ugv_course_gazebo)/launch/gazebo_world.launch" >
+    <arg name="world_name" value="$(find ugv_course_gazebo)/worlds/road_world.world" />
+  </include>
+
+</launch>

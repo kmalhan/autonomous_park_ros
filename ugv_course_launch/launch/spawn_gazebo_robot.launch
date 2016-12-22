@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+
+<launch>
+  <arg name="robot" />
+  <arg name="description_pkg" />
+  <arg name="control_pkg" />
+  <arg name="twist_control" default="true" />
+  <arg name="start_x" default="0.0" />
+  <arg name="start_y" default="0.0" />
+  <arg name="start_z" default="0.0" />
+  <arg name="gps" default="false" />
+  <arg name="gps_rate" default="1.0" />
+  <arg name="pub_tf" default="false" />
+  <arg name="pub_odom" default="false" />
+  <arg name="pub_heading" default="0" />
+  <arg name="use_sensors" default="0" />
+  <arg name="tf_freq" default="30.0" />
+
+  <include file="$(arg control_pkg)/launch/$(arg robot)_control.launch" >
+    <arg name="twist_control" value="$(arg twist_control)"/>
+  </include>
+
+  <!-- Gazebo model spawner -->
+  <group ns="$(arg robot)" >
+    <param name="robot_description" command="$(find xacro)/xacro.py '$(arg description_pkg)/urdf/$(arg robot).urdf.xacro' gps:=$(arg gps) gps_rate:=$(arg gps_rate) pub_tf:=$(arg pub_tf) pub_odom:=$(arg pub_odom) pub_heading:=$(arg pub_heading) use_sensors:=$(arg use_sensors)" />
+    <node pkg="gazebo_ros" type="spawn_model"  name="spawn_$(arg robot)" args="-urdf -param robot_description -model $(arg robot) -x $(arg start_x) -y $(arg start_y) -z $(arg start_z)"/>
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+      <param name="publish_frequency" type="double" value="$(arg tf_freq)" />
+    </node>
+  </group>
+
+</launch>

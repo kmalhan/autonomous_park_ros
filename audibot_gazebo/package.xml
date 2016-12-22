@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package>
+  <name>audibot_gazebo</name>
+  <version>0.0.0</version>
+  <description>The audibot_gazebo package</description>
+  <maintainer email="micho@todo.todo">micho</maintainer>
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>gazebo_ros</build_depend>
+  <run_depend>gazebo_ros</run_depend>
+
+  <export>
+  </export>
+</package>

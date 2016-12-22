@@ -1,0 +1,11 @@
+*~
+.cproject
+.project
+catkin_generated/*
+devel/*
+*CMakeCache.txt
+CMakeFiles/*
+*.cmake
+*Makefile
+*.bag
+gtest/*

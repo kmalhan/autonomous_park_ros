@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<launch>
+  <arg name="twist_control" default="true" />
+  <arg name="gps" default="false" />
+  <arg name="pub_tf" default="false" />
+  <arg name="pub_odom" default="false" />
+  <arg name="use_sensors" default="0" />
+
+  <include file="$(find ugv_course_launch)/launch/spawn_gazebo_robot.launch" >
+    <arg name="robot" value="audibot" />
+    <arg name="description_pkg" value="$(find audibot_description)" />
+    <arg name="control_pkg" value="$(find audibot_control)" />
+    <arg name="twist_control" value="$(arg twist_control)" />
+    <arg name="start_x" value="0.0" />
+    <arg name="start_y" value="0.0" />
+    <arg name="gps" value="$(arg gps)" />
+    <arg name="pub_tf" value="$(arg pub_tf)" />
+    <arg name="pub_odom" value="$(arg pub_odom)" />
+    <arg name="use_sensors" value="$(arg use_sensors)" />
+  </include>
+
+</launch>

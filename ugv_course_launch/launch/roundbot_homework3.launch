@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<launch>
+  <include file="$(find ugv_course_launch)/launch/spawn_gazebo_robot.launch" >
+    <arg name="robot" value="roundbot" />
+    <arg name="description_pkg" value="$(find roundbot_description)" />
+    <arg name="control_pkg" value="$(find roundbot_control)" />
+    <arg name="twist_control" value="false" />
+    <arg name="start_x" value="0.0" />
+    <arg name="start_y" value="0.0" />
+    <arg name="gps" value="false" />
+    <arg name="pub_tf" value="true" />
+  </include>
+
+  <include file="$(find ugv_course_gazebo)/launch/gazebo_world.launch" >
+    <arg name="world_name" value="$(find ugv_course_gazebo)/worlds/homework3.world" />
+  </include>
+</launch>

@@ -1,0 +1,38 @@
+audibot:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50  
+
+  # Vehicle Controllers ---------------------------------------
+  audi_speed_controller:
+    type: audibot_control/AudiSpeedController
+
+    left_wheel_joint: wheel_rl
+    right_wheel_joint: wheel_rr
+
+    max_drive_speed: 125.0 #rad/s
+    max_drive_accel: 8.0 #rad/s^2
+    max_drive_decel: 32.0 #rad/s^2
+    control_timeout: 0.25
+
+    wheel_radius: 0.35739
+    wheelbase: 3.02367
+    track: 1.9
+
+  audi_steering_controller:
+    type: audibot_control/AudiSteeringController
+    
+    left_steer_joint: wheel_fl_steer
+    right_steer_joint: wheel_fr_steer
+    control_timeout: 0.25 
+
+    wheelbase: 3.02367
+    track: 1.9
+    steering_ratio: 16.0
+    max_tire_angle: 0.5
+
+  
+
+
+

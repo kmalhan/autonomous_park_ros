@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+
+<launch>
+
+<!-- Audibot with Twist disabled -->
+  <include file="$(find ugv_course_launch)/launch/spawn_gazebo_robot.launch" >
+    <arg name="robot" value="audibot" />
+    <arg name="description_pkg" value="$(find audibot_description)" />
+    <arg name="control_pkg" value="$(find audibot_control)" />
+    <arg name="twist_control" value="false" />
+    <arg name="start_x" value="0.0" />
+    <arg name="start_y" value="0.0" />
+    <arg name="gps" value="false" />
+    <arg name="pub_tf" value="true" />
+  </include>
+
+<!-- Gazebo World -->
+  <include file="$(find ugv_course_gazebo)/launch/gazebo_world.launch" >
+    <arg name="world_name" value="$(find ugv_course_gazebo)/worlds/homework3.world" />
+  </include>
+  
+<!-- Rviz Configuration -->
+  <node pkg="rviz" type="rviz" name="bicycle_state_space_rviz" respawn="true" args="-d $(find bicycle_state_space)/rviz/visualize.rviz" />
+  
+<!-- Bicycle State Space Node -->
+  <node pkg="bicycle_state_space" type="bicycle_state_space" name="bicycle_state_space" output="screen" />
+  
+<!-- Vehicle Control Node --> 
+  <node pkg="spot_detection" type="vehicle_control" name="vehicle_control" output="screen" />
+  
+<!-- Static Transfrom -->
+  <node pkg="tf" type="static_transform_publisher" name="world_to_map" args="0 0 0 0 0 0 /world /map 30" />
+  
+</launch>

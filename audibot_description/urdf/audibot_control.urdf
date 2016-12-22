@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+
+  <robot name="audibot_control" >
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+          <robotNamespace>/audibot</robotNamespace>
+        </plugin>
+    </gazebo>
+
+    <transmission name="left_rear_wheel">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="wheel_rl" >
+        <hardwareInterface>VelocityJointInterface </hardwareInterface>
+      </joint>
+
+      <actuator name="left_rear_wheel_actuator">
+        <hardwareInterface>EffortJointInterface </hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="right_rear_wheel">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="wheel_rr" >
+        <hardwareInterface>VelocityJointInterface </hardwareInterface>
+      </joint>
+
+      <actuator name="right_rear_wheel_actuator">
+        <hardwareInterface>EffortJointInterface </hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="left_front_wheel">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="wheel_fl" >
+        <hardwareInterface>VelocityJointInterface </hardwareInterface>
+      </joint>
+
+      <actuator name="left_front_wheel_actuator">
+        <hardwareInterface>EffortJointInterface </hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="right_front_wheel">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="wheel_fr" >
+        <hardwareInterface>VelocityJointInterface </hardwareInterface>
+      </joint>
+
+      <actuator name="right_front_wheel_actuator">
+        <hardwareInterface>EffortJointInterface </hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="right_steering">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="wheel_fr_steer" >
+        <hardwareInterface>PositionJointInterface </hardwareInterface>
+      </joint>
+      <actuator name="right_steering_actuator">
+        <hardwareInterface>EffortJointInterface </hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="left_steering">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="wheel_fl_steer" >
+        <hardwareInterface>PositionJointInterface </hardwareInterface>
+      </joint>
+      <actuator name="left_steering_actuator">
+        <hardwareInterface>EffortJointInterface </hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+  </robot>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package>
+  <name>bicycle_state_space</name>
+  <version>0.0.0</version>
+  <description>The bicycle_state_space package</description>
+
+  <maintainer email="student@todo.todo">student</maintainer>
+
+  <license>TODO</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>tf</build_depend>
+  <build_depend>visualization_msgs</build_depend>
+  <build_depend>ugv_course_libs</build_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>tf</run_depend>
+  <run_depend>visualization_msgs</run_depend>
+  <run_depend>ugv_course_libs</run_depend>
+  
+  <export>
+  </export>
+</package>
